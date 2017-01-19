@@ -1,0 +1,34 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Project boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start karma.conf.js --single-run --no-auto-watch --reporters dots"
+  },
+  "keywords": [
+    "JavaScript",
+    "TypeScript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zicht/boilerplate.git"
+  },
+  "author": "Joppe Aarts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jasmine": "^2.5.37",
+    "babel-polyfill": "^6.20.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.3",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "phantomjs-polyfill": "0.0.2",
+    "tslint": "^4.3.1",
+    "tslint-rules": "git+https://github.com/joppe/tslint.git#1.0.0",
+    "typescript": "^2.1.5"
+  },
+  "dependencies": {
+    "systemjs": "^0.19.40"
+  }
+}
