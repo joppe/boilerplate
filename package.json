@@ -18,10 +18,10 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jasmine": "^2.5.37",
-    "babel-polyfill": "^6.20.0",
+    "babel-polyfill": "^6.22.0",
     "jasmine-core": "^2.3.4",
-    "karma": "^0.13.3",
-    "karma-jasmine": "^0.3.5",
+    "karma": "^1.4.0",
+    "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.2",
     "phantomjs-polyfill": "0.0.2",
     "tslint": "^4.3.1",
