@@ -30,13 +30,13 @@ module.exports = function (config) {
             'karma-test-shim.js',
 
             {
-                pattern: 'dist/src/**/*',
+                pattern: 'dist/**/*',
                 served: true,
                 included: false
             },
 
             {
-                pattern: 'dist/test/unit/**/*',
+                pattern: 'test/unit/**/*',
                 served: true,
                 included: false
             }
