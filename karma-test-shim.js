@@ -1,9 +1,6 @@
 Error.stackTraceLimit = 0;
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000;
 
-var builtPaths = (__karma__.config.builtPaths || ['dist/']).map(function (p) {
-    return '/base/' + p;
-});
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000;
 
 __karma__.loaded = function () {
 };
@@ -16,26 +13,33 @@ function isSpecFile(path) {
     return /\.spec\.(.*\.)?js$/.test(path);
 }
 
-function isBuiltFile(path) {
+function isBuiltFile(path, builtPaths) {
     return isJsFile(path) && builtPaths.reduce(function (keep, bp) {
         return keep || (path.substr(0, bp.length) === bp);
     }, false);
 }
 
-var allSpecFiles = Object.keys(window.__karma__.files)
-    .filter(isSpecFile)
-    .filter(isBuiltFile);
-
-SystemJS.config({
-    baseURL: 'base'
-});
-
-System.import('system.conf.js').then(initTesting);
-
-function initTesting () {
+function initTesting(allSpecFiles) {
     return Promise.all(
         allSpecFiles.map(function (moduleName) {
             return System.import(moduleName);
         })
     ).then(__karma__.start, __karma__.error);
 }
+
+(function () {
+    var builtPaths = ['/base'],
+        allSpecFiles= Object.keys(window.__karma__.files)
+            .filter(isSpecFile)
+            .filter(function (path) {
+                return isBuiltFile(path, builtPaths);
+            });
+
+    SystemJS.config({
+        baseURL: 'base'
+    });
+
+    System.import('system.conf.js').then(function () {
+        initTesting(allSpecFiles);
+    });
+}());
