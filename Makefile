@@ -51,7 +51,7 @@ lint:
 setup: structure npm typescript
 
 clean:
-	@echt "Remove node_modules and transpiled javascript files"
+	@echo "Remove node_modules and transpiled javascript files"
 	rm -rf $(PWD)/node_modules
 	cd $(PWD)/dist && rm *.js
 	rm -rf $(PWD)/test/js
