@@ -21,6 +21,12 @@ module.exports = function (config) {
             'node_modules/babel-polyfill/dist/polyfill.js',
 
             {
+                pattern: 'node_modules/tslib/tslib.js',
+                included: false,
+                watched: false
+            },
+
+            {
                 pattern: 'system.conf.js',
                 included: false,
                 watched: false

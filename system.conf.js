@@ -1,3 +1,7 @@
 SystemJS.config({
-    defaultJSExtensions: true
+    defaultJSExtensions: true,
+
+    map: {
+        tslib: 'node_modules/tslib/tslib.js'
+    }
 });
