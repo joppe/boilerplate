@@ -1,19 +1,9 @@
 {
     "compilerOptions": {
-        "baseUrl": "./",
-        "declaration": true,
-        "experimentalDecorators": true,
-        "importHelpers": true,
-        "module": "system",
-        "outDir": "dist",
-        "paths": {
-            "tslib": ["./node_modules/tslib/tslib.d.ts"]
-        },
-        "removeComments": true,
-        "sourceMap": true,
-        "target": "es5"
+        "target": "es5",
+        "module": "commonjs"
     },
-    "include": [
-        "src/**/*"
+    "exclude": [
+        "node_modules"
     ]
 }
