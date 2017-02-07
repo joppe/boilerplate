@@ -1,24 +1,35 @@
 {
   "name": "boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "Boilerplate project for using TypeScript, Webpack, Karma and Jasmine",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "directories": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joppe/boilerplate.git"
   },
-  "author": "",
+  "author": {
+    "name": "Joppe Aarts",
+    "email": "joppe@apestaartje.info"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/joppe/boilerplate/issues"
   },
   "homepage": "https://github.com/joppe/boilerplate#readme",
+  "keywords": [
+    "karma",
+    "typescript",
+    "webpack",
+    "javascript",
+    "testing",
+    "boilerplate",
+    "karma-webpack",
+    "jasmine"
+  ],
   "devDependencies": {
     "@types/jasmine": "^2.5.41",
     "jasmine-core": "^2.5.2",
