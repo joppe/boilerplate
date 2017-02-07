@@ -1,10 +1,13 @@
 // Karma configuration
 
+
+var webpackConfig = require('./webpack.config.js');
+
 module.exports = function (config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '',
+        basePath: './',
 
 
         // frameworks to use
@@ -14,52 +17,37 @@ module.exports = function (config) {
         ],
 
 
-        // list of files / patterns to load in the browser
-        files: [
-            'node_modules/systemjs/dist/system.src.js',
-            'node_modules/systemjs/dist/system-polyfills.js',
-            'node_modules/babel-polyfill/dist/polyfill.js',
-
-            {
-                pattern: 'node_modules/tslib/tslib.js',
-                included: false,
-                watched: false
-            },
-
-            {
-                pattern: 'system.conf.js',
-                included: false,
-                watched: false
-            },
-
-            'karma-test-shim.js',
-
-            {
-                pattern: 'dist/**/*',
-                served: true,
-                included: false
-            },
-
-            {
-                pattern: 'test/**/*',
-                served: true,
-                included: false
-            }
-        ],
-
-
         // list of files to exclude
         exclude: [],
 
 
-        // preprocess matching files before serving them to the browser
-        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {},
+        files: [
+            {
+                pattern: 'test/unit/**/*.spec.ts',
+                watched: false
+            }
+        ],
+
+        preprocessors: {
+            'test/unit/**/*.spec.ts': ['webpack']
+        },
+
+        webpack: {
+            module: webpackConfig.module,
+            resolve: webpackConfig.resolve
+        },
+
+        webpackMiddleware: {
+            // webpack-dev-middleware configuration
+            // i. e.
+            stats: 'errors-only'
+        },
 
 
-        plugins : [
+        plugins: [
             'karma-jasmine',
-            'karma-phantomjs-launcher'
+            'karma-phantomjs-launcher',
+            'karma-webpack'
         ],
 
 
@@ -94,5 +82,5 @@ module.exports = function (config) {
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
         singleRun: false
-    });
+    })
 };

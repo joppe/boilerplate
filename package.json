@@ -1,35 +1,34 @@
 {
   "name": "boilerplate",
   "version": "1.0.0",
-  "description": "Project boilerplate",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "karma start karma.conf.js --single-run --no-auto-watch --reporters dots"
+  "directories": {
+    "test": "test"
   },
-  "keywords": [
-    "JavaScript",
-    "TypeScript"
-  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zicht/boilerplate.git"
+    "url": "git+https://github.com/joppe/boilerplate.git"
   },
-  "author": "Joppe Aarts",
+  "author": "",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joppe/boilerplate/issues"
+  },
+  "homepage": "https://github.com/joppe/boilerplate#readme",
   "devDependencies": {
-    "@types/jasmine": "^2.5.37",
-    "babel-polyfill": "^6.22.0",
-    "jasmine-core": "^2.3.4",
-    "karma": "^1.4.0",
+    "@types/jasmine": "^2.5.41",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.1",
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.2",
-    "phantomjs-polyfill": "0.0.2",
-    "tslib": "^1.5.0",
-    "tslint": "^4.3.1",
-    "tslint-rules": "git+https://github.com/joppe/tslint.git#1.0.0",
-    "typescript": "^2.1.5"
-  },
-  "dependencies": {
-    "systemjs": "^0.19.40"
+    "karma-webpack": "^2.0.2",
+    "phantomjs": "^2.1.7",
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.1.5",
+    "webpack": "^2.2.1"
   }
 }
