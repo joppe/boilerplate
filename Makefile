@@ -37,5 +37,4 @@ setup: structure npm typescript
 clean:
 	@echo "Remove node_modules and transpiled javascript files"
 	rm -rf $(PWD)/node_modules
-	cd $(PWD)/dist && rm *.js
-	rm -rf $(PWD)/test/js
+	cd $(PWD)/dist && rm *
