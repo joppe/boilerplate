@@ -6,7 +6,6 @@ structure:
 	@echo "Create folder structure"
 	mkdir -p dist
 	mkdir -p src
-	mkdir -p test/js
 	mkdir -p test/unit
 
 .PHONY: npm
