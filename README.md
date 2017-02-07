@@ -11,3 +11,11 @@ There is a Makefile included, with the following tasks:
 - lint, lint the TypeScript
 - karma, apply all tests
 - clean, remove node_modules directory and the compiled JavaScript
+
+Start a project by doing:
+
+- `mkdir <project_name>`
+- `cd <project_name>`
+- `git clone https://github.com/joppe/boilerplate.git .`
+- `rm -rf .git`
+- ... do the steps to create a new project described as on github.com
