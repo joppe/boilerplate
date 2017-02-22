@@ -1,6 +1,6 @@
 {
   "name": "boilerplate",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Boilerplate project for using TypeScript, Webpack, Karma and Jasmine",
   "main": "index.js",
   "directories": {},
