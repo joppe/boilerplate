@@ -14,13 +14,13 @@ npm:
 	npm install
 
 .PHONY: typescript
-typescript:
+webpack:
 	@echo "Transpile typescript"
-	$(PWD)/node_modules/.bin/tsc --project ./
+	$(PWD)/node_modules/.bin/webpack
 
-typescript-watch:
+webpack-watch:
 	@echo "Transpile typescript (watching for changes)"
-	$(PWD)/node_modules/.bin/tsc --project ./  --watch
+	$(PWD)/node_modules/.bin/webpack --watch
 
 .PHONY: karma
 karma:
@@ -32,9 +32,10 @@ lint:
 	echo "Run tslint"
 	node $(PWD)/node_modules/.bin/tslint --config $(PWD)/node_modules/tslint-rules/tslint.json --project $(PWD)/tsconfig.json
 
-setup: structure npm typescript
+setup: structure npm webpack
 
 clean:
 	@echo "Remove node_modules and transpiled javascript files"
 	rm -rf $(PWD)/node_modules
 	cd $(PWD)/dist && rm *
+	rm -rf coverage

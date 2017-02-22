@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "declaration": true,
+        "declarationDir": "dist",
         "module": "commonjs",
         "outDir": "dist",
         "removeComments": true,
@@ -11,6 +12,7 @@
         "src/**/*"
     ],
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "dist"
     ]
 }
