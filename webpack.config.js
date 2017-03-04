@@ -28,7 +28,6 @@ const config = {
      * See: http://webpack.github.io/docs/configuration.html#resolve
      */
     resolve: {
-
         /**
          * An array of extensions that should be used to resolve modules.
          *
@@ -61,8 +60,6 @@ const config = {
 
             /**
              * Typescript loader support for .ts
-             *
-             * See: https://github.com/s-panferov/awesome-typescript-loader
              */
             {
                 test: /\.(t|j)sx?$/,
