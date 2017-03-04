@@ -18,7 +18,7 @@ Error.stackTraceLimit = Infinity;
  * any file that ends with spec.ts and get its path. By passing in true
  * we say do this recursively
  */
-var testContext = require.context('./test', true, /\.spec\.ts/);
+const testContext = require.context('./test', true, /\.spec\.ts/);
 
 /*
  * get all the files, for each file, call the context function
@@ -30,4 +30,4 @@ function requireAll(requireContext) {
 }
 
 // requires and returns all modules that match
-var modules = requireAll(testContext);
+const modules = requireAll(testContext);
