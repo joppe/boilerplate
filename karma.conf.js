@@ -35,7 +35,8 @@ module.exports = function (config) {
                         compilerOptions: {
                             // Remove TypeScript helpers to be injected
                             // below by DefinePlugin
-                            removeComments: true
+                            removeComments: true,
+                            target: 'es5'
                         }
                     }
                 }
