@@ -7,8 +7,7 @@ const path = require('path');
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
 const config = {
-    entry: {
-    },
+    entry: {},
 
     output: {
         filename: '[name].js',
