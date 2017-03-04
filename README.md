@@ -1,8 +1,8 @@
 # Boilerplate
 
-I use this project as my boilerplate for projects that use TypeScript.
-For testing I use Karma and Jasmine.
-For compiling TypeScript to JavaScript I use Webpack.
+I use this project as a boilerplate for projects that use TypeScript.
+For testing I use Webpack, Karma, Jasmine and Istanbul to generate code coverage reports.
+For compiling TypeScript to JavaScript I use the Typescript 2.2.
 
 There is a Makefile included, with the following tasks:
 
