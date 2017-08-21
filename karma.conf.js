@@ -47,6 +47,9 @@ module.exports = function (config) {
                     filename: 'coverage'
                 }
             },
+            compilerOptions: {
+                module: 'commonjs'
+            },
             tsconfig: './tsconfig.json'
 
         },

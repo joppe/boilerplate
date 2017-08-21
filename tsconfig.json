@@ -2,7 +2,7 @@
     "compilerOptions": {
         "baseUrl": "./",
         "declaration": true,
-        "module": "commonjs",
+        "module": "system",
         "moduleResolution": "node",
         "outDir": "dist",
         "removeComments": true,
