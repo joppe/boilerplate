@@ -1,53 +1,37 @@
 {
   "name": "boilerplate",
-  "version": "3.0.1",
-  "description": "Boilerplate project for using TypeScript, Webpack, Karma and Jasmine",
-  "main": "index.js",
-  "directories": {},
+  "version": "0.0.0",
+  "description": "Boilerplate project for TypeScript/Karma/SystemJS",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start karma.conf.js",
+    "lint": "tslint --config node_modules/tslint-rules/tslint.json --project tsconfig.json",
+    "compile": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joppe/boilerplate.git"
+    "url": "https://github.com/joppe/boilerplate"
   },
   "author": {
     "name": "Joppe Aarts",
     "email": "joppe@apestaartje.info"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/joppe/boilerplate/issues"
-  },
-  "homepage": "https://github.com/joppe/boilerplate#readme",
   "keywords": [
-    "karma",
-    "typescript",
-    "webpack",
-    "javascript",
-    "testing",
-    "boilerplate",
-    "karma-webpack",
-    "jasmine"
+    "Karma",
+    "TypeScript",
+    "JavaScript",
+    "Jasmine",
+    "SystemJS"
   ],
   "devDependencies": {
-    "@types/jasmine": "^2.5.41",
-    "istanbul-instrumenter-loader": "^2.0.0",
-    "jasmine-core": "^2.5.2",
-    "karma": "^1.4.1",
-    "karma-coverage": "^1.1.1",
+    "@types/jasmine": "^2.5.53",
+    "jasmine-core": "^2.7.0",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.0",
-    "karma-phantomjs-launcher": "^1.0.2",
-    "karma-remap-coverage": "^0.1.4",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^2.0.2",
-    "phantomjs-prebuilt": "^2.1.14",
-    "source-map-loader": "^0.1.6",
-    "ts-loader": "^2.0.0",
-    "tslib": "^1.5.0",
-    "tslint": "^4.4.2",
-    "tslint-rules": "git+https://github.com/joppe/tslint.git#1.0.0",
-    "typescript": "^2.2.1",
-    "webpack": "^2.2.1"
+    "karma-typescript": "^3.0.5",
+    "tslint": "^5.6.0",
+    "tslint-rules": "git+ssh://git@github.com/joppe/tslint-rules.git#1.0.1",
+    "typescript": "^2.4.2"
   }
 }
