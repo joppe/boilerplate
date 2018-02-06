@@ -1,83 +1,88 @@
-const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-/**
- * Webpack configuration
- *
- * See: http://webpack.github.io/docs/configuration.html#cli
- */
 const config = {
-    entry: {},
-
-    output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname)
-    },
-
-    /**
-     * Source map for Karma from the help of karma-sourcemap-loader &  karma-webpack
-     *
-     * Do not change, leave as is or it wont work.
-     * See: https://github.com/webpack/karma-webpack#source-maps
-     */
     devtool: 'source-map',
 
-    /**
-     * Options affecting the resolving of modules.
-     *
-     * See: http://webpack.github.io/docs/configuration.html#resolve
-     */
-    resolve: {
-        /**
-         * An array of extensions that should be used to resolve modules.
-         *
-         * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
-         */
-        extensions: ['.ts', '.tsx', '.js']
+    devServer: {
+        port: 9000
     },
 
-    /**
-     * Options affecting the normal modules.
-     *
-     * See: http://webpack.github.io/docs/configuration.html#module
-     *
-     * 'use:' revered back to 'loader:' as a temp. workaround for #1188
-     * See: https://github.com/AngularClass/angular2-webpack-starter/issues/1188#issuecomment-262872034
-     */
+    entry: [
+        './sass/main.jscss',
+        './src/main.ts',
+    ],
+
     module: {
         rules: [
-            /**
-             * Source map loader support for *.js files
-             * Extracts SourceMaps for source files that as added as sourceMappingURL comment.
-             *
-             * See: https://github.com/webpack/source-map-loader
-             */
+            {
+                test: /\.tsx?$/,
+                loader: 'awesome-typescript-loader'
+            },
+
             {
                 enforce: 'pre',
                 test: /\.js$/,
                 loader: 'source-map-loader'
             },
 
-            /**
-             * Typescript loader support for .ts
-             */
             {
-                test: /\.(t|j)sx?$/,
-                loader: 'ts-loader'
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        },
+
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: () => {
+                                    return [
+                                        require('autoprefixer')({
+                                            browsers: [
+                                                'last 2 versions',
+                                                'IE >= 9'
+                                            ]
+                                        })
+                                    ];
+                                },
+                                sourceMap: true
+                            }
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        }
+                    ]
+                })
             }
         ]
     },
-
-    /**
-     * Add additional plugins to the compiler.
-     *
-     * See: http://webpack.github.io/docs/configuration.html#plugins
-     */
+    output: {
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/dist'
+    },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true
-        })
-    ]
+        new ExtractTextPlugin({
+            filename: 'main.css'
+        }),
+    ],
+    resolve: {
+        alias: {
+            app: path.resolve(__dirname, 'src')
+        },
+        extensions: [
+            '.js', '.ts', '.tsx'
+        ]
+    }
 };
 
 module.exports = config;
