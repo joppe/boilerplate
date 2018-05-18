@@ -36,10 +36,10 @@ module.exports = function (config) {
                 'test/**/*'
             ],
             reports: {
-                clover: {
+                lcovonly: {
                     directory: 'coverage',
-                    subdirectory: 'clover',
-                    filename: 'coverage.xml'
+                    subdirectory: 'lcovonly',
+                    filename: 'lcov.info'
                 },
                 'html': {
                     directory: 'coverage',
@@ -73,7 +73,7 @@ module.exports = function (config) {
                     '--no-sandbox',
                     '--headless',
                     '--disable-gpu',
-                    ' --remote-debugging-port=9222'
+                    '--remote-debugging-port=9222'
                 ]
             }
         },
