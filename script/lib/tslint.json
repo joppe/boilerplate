@@ -1,0 +1,17 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint-microsoft-contrib"
+    ],
+    "jsRules": {},
+    "rules": {
+        "array-type": false,
+        "prefer-array-literal": false,
+        "no-implicit-dependencies": false,
+        "no-relative-imports": false,
+        "no-reserved-keywords": false,
+        "no-submodule-imports": false,
+        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"]
+    },
+    "rulesDirectory": []
+}
