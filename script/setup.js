@@ -97,8 +97,8 @@ function createLib(name) {
     );
 
     moveFiles(
-        `${__dirname}/lib/test`,
-        `${__dirname}/../test`,
+        `${__dirname}/lib/test/`,
+        `${__dirname}/../test/`,
          [
             'tslint.json',
         ]
@@ -138,7 +138,7 @@ function createProject(name) {
 
     moveFiles(
         `${__dirname}/project/`,
-        `${__dirname}/../sass`,
+        `${__dirname}/../sass/`,
         [
             'main.jscss',
             'main.scss',
@@ -146,8 +146,8 @@ function createProject(name) {
     );
 
     moveFiles(
-        `${__dirname}/project/test`,
-        `${__dirname}/../test`,
+        `${__dirname}/project/test/`,
+        `${__dirname}/../test/`,
          [
             'tslint.json',
         ]
