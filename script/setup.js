@@ -19,11 +19,14 @@ if (process.argv.length === 4 && ['l', 'p'].indexOf(process.argv[2]) === -1) {
 }
 
 const fs = require('fs');
-const isLib = process.argv[2] === 'l';
-const name = process.argv[3];
 
 function moveFile(sourcePath, targetPath, file) {
-    fs.renameSync(`${sourcePath}${file}`, `${targetPath}${file}`);
+    const from = `${sourcePath}${file}`;
+    const to = `${targetPath}${file}`;
+
+    console.log(`moveFile from: ${from} to: ${to}`);
+    
+    fs.renameSync(from, to);
 }
 
 function moveFiles(sourcePath, targetPath, files) {
@@ -37,12 +40,41 @@ function createDirs(root, dirs) {
         const path = `${root}/${dir}`;
 
         if (!fs.existsSync(path)) {
+            console.log(`Create dir: ${path}`);
+
             fs.mkdirSync(path);
         }
     });
 }
 
-if (isLib) {
+function installPackages() {
+    const exec = require('child_process').exec;
+
+    console.log('install packages');
+
+    exec(`cd ${__dirname}/../ && npm install`, (error, stdout, stderr) => {
+        console.log(`${stdout}`);
+        console.log(`${stderr}`);
+        
+        if (error !== null) {
+            console.log(`exec error: ${error}`);
+        }
+    });
+}
+
+function updatePackageConfig(name) {
+    const file = `${__dirname}/../package.json`;
+    const contents = fs.readFileSync(file, 'utf8');
+    const modified = contents.replace(/{{ name }}/g, name);
+
+    console.log('update package.json');
+    
+    fs.writeFileSync(file, modified);
+}
+
+function createLib(name) {
+    console.log(`create lib ${name}`);
+
     createDirs(
         `${__dirname}/../`,
         [
@@ -63,7 +95,14 @@ if (isLib) {
             'tslint.json',
         ]
     );
-} else {
+
+    updatePackageConfig(name);
+    installPackages();
+}
+
+function createProject(name) {
+    console.log(`create project ${name}`);
+
     createDirs(
         `${__dirname}/../`,
         [
@@ -97,15 +136,13 @@ if (isLib) {
             'main.scss',
         ]
     );
+
+    updatePackageConfig(name);
+    installPackages();
 }
 
-const exec = require('child_process').exec;
-
-exec('npm install', (error, stdout, stderr) => {
-    console.log(`${stdout}`);
-    console.log(`${stderr}`);
-    
-    if (error !== null) {
-        console.log(`exec error: ${error}`);
-    }
-});
+if (process.argv[2] === 'l') {
+    createLib(process.argv[3]);
+} else {
+    createProject(process.argv[3]);
+}
