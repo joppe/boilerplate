@@ -6,7 +6,7 @@ To start a project use:
 `node ./script/setup.js p <project_name>`
 
 To start a library use:
-`node ./script/setup.js l <project_name>`
+`node ./script/setup.js l <library_name>`
 
 Start a project/lib by doing:
 
