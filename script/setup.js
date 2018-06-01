@@ -96,6 +96,14 @@ function createLib(name) {
         ]
     );
 
+    moveFiles(
+        `${__dirname}/lib/test`,
+        `${__dirname}/../test`,
+         [
+            'tslint.json',
+        ]
+    );
+
     updatePackageConfig(name);
     installPackages();
 }
@@ -134,6 +142,14 @@ function createProject(name) {
         [
             'main.jscss',
             'main.scss',
+        ]
+    );
+
+    moveFiles(
+        `${__dirname}/project/test`,
+        `${__dirname}/../test`,
+         [
+            'tslint.json',
         ]
     );
 
