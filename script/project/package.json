@@ -6,6 +6,7 @@
     "build": "webpack",
     "dev": "webpack-dev-server",
     "lint": "tslint --config ./tslint.json --project tsconfig.json",
+    "remove:setup": "rm -rf .git && rm -rf script",
     "test": "karma start karma.conf.js",
     "test:watch": "karma start karma.conf.js --no-single-run --auto-watch"
   },
