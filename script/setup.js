@@ -90,6 +90,7 @@ function createLib(name) {
         `${__dirname}/lib/`,
         `${__dirname}/../`,
          [
+            '.travis.yml',
             'package.json',
             'tsconfig.json',
             'tslint.json',
@@ -162,3 +163,5 @@ if (process.argv[2] === 'l') {
 } else {
     createProject(process.argv[3]);
 }
+
+console.log('And now execute "npm run remove:setup" to cleanup directory.')
