@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run clean && node ./node_modules/.bin/tsc",
     "clean": "rm -rf dist",
-    "lint": "tslint --config ./tslint.json --project tsconfig.json",
+    "lint": "node_modules/.bin/tslint --config ./tslint.json --project tsconfig.json",
     "prepublishOnly": "npm run build",
     "remove:setup": "rm -rf .git && rm -rf script",
     "test": "karma start karma.conf.js",
