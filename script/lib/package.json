@@ -1,5 +1,5 @@
 {
-  "name": "{{ name }}",
+  "name": "name",
   "version": "0.0.0",
   "description": "A library",
   "scripts": {
@@ -13,10 +13,6 @@
   },
   "main": "dist/index",
   "typings": "dist/index",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/joppe/{{ name }}"
-  },
   "author": {
     "name": "Joppe Aarts",
     "email": "joppe@apestaartje.info"
@@ -27,21 +23,19 @@
     "TypeScript"
   ],
   "devDependencies": {
-    "@types/jasmine": "^2.8.6",
-    "awesome-typescript-loader": "^3.4.1",
-    "coveralls": "^3.0.1",
-    "jasmine-core": "^2.99.0",
-    "karma": "^1.7.1",
+    "@types/jasmine": "^3.3.0",
+    "jasmine-core": "^3.3.0",
+    "karma": "^3.1.1",
     "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.1",
-    "karma-typescript": "^3.0.12",
+    "karma-jasmine": "^2.0.1",
+    "karma-typescript": "^3.0.13",
     "karma-typescript-es6-transform": "^1.0.4",
-    "source-map-loader": "^0.2.3",
-    "tslint": "^5.9.1",
-    "tslint-microsoft-contrib": "^5.0.2",
-    "typescript": "^2.7.1"
+    "tslint": "^5.11.0",
+    "tslint-microsoft-contrib": "^5.2.1",
+    "typescript": "^3.2.1"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {}
 }
