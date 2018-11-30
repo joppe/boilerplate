@@ -91,6 +91,7 @@ function createLib(name) {
         `${__dirname}/../`,
          [
             '.travis.yml',
+            'karma.conf.js',
             'package.json',
             'tsconfig.json',
             'tslint.json',
