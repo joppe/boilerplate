@@ -164,4 +164,4 @@ if (process.argv[2] === 'l') {
     createProject(process.argv[3]);
 }
 
-console.log('And now execute "npm run remove:setup" to cleanup directory.')
+console.log('And now .git and script folder.')

@@ -7,7 +7,6 @@
     "clean": "rm -rf dist",
     "lint": "node_modules/.bin/tslint --config ./tslint.json --project tsconfig.json",
     "prepublishOnly": "npm run build",
-    "remove:setup": "rm -rf .git && rm -rf script",
     "test": "karma start karma.conf.js",
     "test:watch": "karma start karma.conf.js --no-single-run --auto-watch"
   },
