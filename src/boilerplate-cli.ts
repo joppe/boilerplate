@@ -46,7 +46,7 @@ inquirer.prompt(
     ]
 )
 .then((answers: Config): void => {
-    const root: string = '/home/joppe/projects/joppe/boilerplate/tmp/';
+    const root: string = process.cwd();
 
     if (answers.type === TYPE_LIBRARY) {
         createLibrary(answers, root);
