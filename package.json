@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "@apestaartje/boilerplate",
   "version": "6.0.0",
   "description": "I use this project as a boilerplate for projects and libraries that use TypeScript.",
   "main": "index.js",
