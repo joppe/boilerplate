@@ -7,6 +7,8 @@ import { initializeGit } from '../common/initialize-git';
 import { installPackages } from '../common/install-packages';
 import { updatePackageConfig } from '../common/update-package-config';
 
+const ASSET_PATH: string = `${__dirname}/../../assets/project`;
+
 export function createProject(config: Config, path: string): void {
     console.log(chalk.green(`Create project "${config.name}"`));
 
@@ -24,7 +26,7 @@ export function createProject(config: Config, path: string): void {
     );
 
     copyFiles(
-        `${__dirname}/assets/`,
+        `${ASSET_PATH}/`,
         `${path}/`,
         [
             '.editorconfig',
@@ -40,7 +42,7 @@ export function createProject(config: Config, path: string): void {
     );
 
     copyFiles(
-        `${__dirname}/assets/sass/`,
+        `${ASSET_PATH}/sass/`,
         `${path}/sass/`,
         [
             'main.jscss',
@@ -49,7 +51,7 @@ export function createProject(config: Config, path: string): void {
     );
 
     copyFiles(
-        `${__dirname}/assets/test/`,
+        `${ASSET_PATH}/test/`,
         `${path}/test/`,
         [
             'tslint.json'

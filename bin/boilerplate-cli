@@ -1,5 +1,3 @@
-#!/bin/bash
+#!/usr/bin/env node
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-
-node $DIR/../node_modules/.bin/ts-node --project $DIR/../tsconfig.json $DIR/../src/boilerplate-cli.ts
+require('./../dist/boilerplate-cli.js');

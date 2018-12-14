@@ -2,13 +2,14 @@
   "name": "@apestaartje/boilerplate",
   "version": "6.0.0",
   "description": "I use this project as a boilerplate for projects and libraries that use TypeScript.",
-  "main": "index.js",
+  "main": "./dist/boilerplate-cli.js",
   "scripts": {
+    "build": "./node_modules/.bin/tsc --project tsconfig.json",
     "lint": "./node_modules/.bin/tslint --config ./tslint.json --project tsconfig.json",
-    "start": "./node_modules/.bin/ts-node --project ./tsconfig.json ./src/boilerplate-cli.ts"
+    "start:dev": "./node_modules/.bin/ts-node --project ./tsconfig.json ./src/boilerplate-cli.ts"
   },
   "bin": {
-    "boilerplate-cli": "bin/boilerplate-cli"
+    "boilerplate-cli": "./bin/boilerplate-cli"
   },
   "repository": {
     "type": "git",
@@ -27,15 +28,15 @@
     "url": "https://github.com/joppe/boilerplate/issues"
   },
   "homepage": "https://github.com/joppe/boilerplate#readme",
-  "dependencies": {
-    "chalk": "^2.4.1",
-    "inquirer": "^6.2.1",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.2.2"
-  },
   "devDependencies": {
     "@types/node": "^10.12.15",
+    "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "tslint-microsoft-contrib": "^6.0.0"
+    "tslint-microsoft-contrib": "^6.0.0",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "inquirer": "^6.2.1"
   }
 }
