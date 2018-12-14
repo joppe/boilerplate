@@ -25,7 +25,7 @@ export function createProject(config: Config, path: string): void {
 
     copyFiles(
         `${__dirname}/assets/`,
-        path,
+        `${path}/`,
         [
             '.editorconfig',
             '.gitignore',
