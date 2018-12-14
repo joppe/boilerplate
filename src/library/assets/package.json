@@ -22,7 +22,6 @@
   },
   "license": "MIT",
   "keywords": [
-    "JavaScript",
     "TypeScript"
   ],
   "devDependencies": {
