@@ -1,6 +1,6 @@
 {
   "name": "@apestaartje/boilerplate",
-  "version": "6.0.3",
+  "version": "6.0.4",
   "description": "I use this project as a boilerplate for projects and libraries that use TypeScript.",
   "main": "./dist/boilerplate-cli.js",
   "scripts": {
