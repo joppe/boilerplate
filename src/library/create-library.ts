@@ -27,14 +27,14 @@ export function createLibrary(config: Config, path: string): void {
         `${ASSET_PATH}/`,
         `${path}/`,
         [
-            '.editorconfig',
-            '.gitignore',
-            '.npmrc',
-            '.travis.yml',
-            'karma.conf.js',
-            'package.json',
-            'tsconfig.json',
-            'tslint.json'
+            ['editorconfig', '.editorconfig'],
+            ['gitignore', '.gitignore'],
+            ['npmrc', '.npmrc'],
+            ['travis.yml', '.travis.yml'],
+            ['karma.conf.js'],
+            ['package.json'],
+            ['tsconfig.json'],
+            ['tslint.json']
         ]
     );
 
@@ -42,7 +42,7 @@ export function createLibrary(config: Config, path: string): void {
         `${ASSET_PATH}test/`,
         `${path}/test/`,
         [
-            'tslint.json'
+            ['tslint.json']
         ]
     );
 

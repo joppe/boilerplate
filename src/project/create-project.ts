@@ -29,15 +29,15 @@ export function createProject(config: Config, path: string): void {
         `${ASSET_PATH}/`,
         `${path}/`,
         [
-            '.editorconfig',
-            '.gitignore',
-            '.npmrc',
-            'index.html',
-            'karma.conf.js',
-            'package.json',
-            'tsconfig.json',
-            'tslint.json',
-            'webpack.config.js'
+            ['editorconfig', '.editorconfig'],
+            ['gitignore', '.gitignore'],
+            ['npmrc', '.npmrc'],
+            ['index.html'],
+            ['karma.conf.js'],
+            ['package.json'],
+            ['tsconfig.json'],
+            ['tslint.json'],
+            ['webpack.config.js']
         ]
     );
 
@@ -45,8 +45,8 @@ export function createProject(config: Config, path: string): void {
         `${ASSET_PATH}/sass/`,
         `${path}/sass/`,
         [
-            'main.jscss',
-            'main.scss'
+            ['main.jscss'],
+            ['main.scss']
         ]
     );
 
@@ -54,7 +54,7 @@ export function createProject(config: Config, path: string): void {
         `${ASSET_PATH}/test/`,
         `${path}/test/`,
         [
-            'tslint.json'
+            ['tslint.json']
         ]
     );
 
