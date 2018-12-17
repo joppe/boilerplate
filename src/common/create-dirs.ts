@@ -1,12 +1,14 @@
 import chalk from 'chalk';
 import * as fs from 'fs';
 
-export function createDirs(root: string, dirs: Array<string>): void {
+export function createDirs(root: string, dirs: Array<string>, verbose: boolean): void {
     dirs.forEach((dir: string): void => {
         const path: string = `${root}/${dir}`;
 
         if (!fs.existsSync(path)) {
-            console.log(chalk.magenta(`Create dir: ${chalk.bold(path)}`));
+            if (verbose) {
+                console.log(chalk.magenta(`Create dir: ${chalk.bold(path)}`));
+            }
 
             fs.mkdirSync(path);
         }

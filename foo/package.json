@@ -1,0 +1,49 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "description": "A project",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server",
+    "lint": "node_modules/.bin/tslint --config ./tslint.json --project tsconfig.json",
+    "test": "karma start karma.conf.js",
+    "test:watch": "karma start karma.conf.js --no-single-run --auto-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joppe/test"
+  },
+  "author": {
+    "name": "Joppe Aarts",
+    "email": "joppe@apestaartje.info"
+  },
+  "license": "MIT",
+  "keywords": [
+    "TypeScript",
+    "JavaScript"
+  ],
+  "devDependencies": {
+    "@types/jasmine": "^2.8.6",
+    "autoprefixer": "^7.2.5",
+    "awesome-typescript-loader": "^3.4.1",
+    "bootstrap": "^4.0.0",
+    "css-loader": "^0.28.9",
+    "coveralls": "^3.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "jasmine-core": "^2.99.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-typescript": "^3.0.12",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^2.1.0",
+    "sass-loader": "^6.0.6",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.20.1",
+    "tslint": "^5.9.1",
+    "tslint-microsoft-contrib": "^5.0.2",
+    "typescript": "^2.7.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}

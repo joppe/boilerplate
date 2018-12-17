@@ -9,8 +9,10 @@ import { updatePackageConfig } from '../common/update-package-config';
 
 const ASSET_PATH: string = `${__dirname}/../../assets/project`;
 
-export function createProject(config: Config, path: string): void {
-    console.log(chalk.green(`Create project "${config.name}"`));
+export function createProject(config: Config, path: string, verbose: boolean): void {
+    if (verbose) {
+        console.log(chalk.green(`Create project "${config.name}"`));
+    }
 
     createDirs(
         path,
@@ -22,7 +24,8 @@ export function createProject(config: Config, path: string): void {
             'src',
             'test',
             'test/unit'
-        ]
+        ],
+        verbose
     );
 
     copyFiles(
@@ -38,7 +41,8 @@ export function createProject(config: Config, path: string): void {
             ['tsconfig.json'],
             ['tslint.json'],
             ['webpack.config.js']
-        ]
+        ],
+        verbose
     );
 
     copyFiles(
@@ -47,7 +51,8 @@ export function createProject(config: Config, path: string): void {
         [
             ['main.jscss'],
             ['main.scss']
-        ]
+        ],
+        verbose
     );
 
     copyFiles(
@@ -55,13 +60,14 @@ export function createProject(config: Config, path: string): void {
         `${path}/test/`,
         [
             ['tslint.json']
-        ]
+        ],
+        verbose
     );
 
-    updatePackageConfig(path, config.name);
-    installPackages(path);
+    updatePackageConfig(path, config.name, verbose);
+    installPackages(path, verbose);
 
     if (config.git) {
-        initializeGit(path);
+        initializeGit(path, verbose);
     }
 }

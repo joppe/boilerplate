@@ -9,8 +9,10 @@ import { updatePackageConfig } from '../common/update-package-config';
 
 const ASSET_PATH: string = `${__dirname}/../../assets/library`;
 
-export function createLibrary(config: Config, path: string): void {
-    console.log(chalk.green(`Create library "${config.name}"`));
+export function createLibrary(config: Config, path: string, verbose: boolean): void {
+    if (verbose) {
+        console.log(chalk.green(`Create library "${config.name}"`));
+    }
 
     createDirs(
         path,
@@ -20,7 +22,8 @@ export function createLibrary(config: Config, path: string): void {
             'src',
             'test',
             'test/unit'
-        ]
+        ],
+        verbose
     );
 
     copyFiles(
@@ -35,7 +38,8 @@ export function createLibrary(config: Config, path: string): void {
             ['package.json'],
             ['tsconfig.json'],
             ['tslint.json']
-        ]
+        ],
+        verbose
     );
 
     copyFiles(
@@ -43,13 +47,14 @@ export function createLibrary(config: Config, path: string): void {
         `${path}/test/`,
         [
             ['tslint.json']
-        ]
+        ],
+        verbose
     );
 
-    updatePackageConfig(path, config.name);
-    installPackages(path);
+    updatePackageConfig(path, config.name, verbose);
+    installPackages(path, verbose);
 
     if (config.git) {
-        initializeGit(path);
+        initializeGit(path, verbose);
     }
 }
