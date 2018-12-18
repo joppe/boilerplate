@@ -17,9 +17,7 @@ export function createProject(config: Config, path: string, verbose: boolean): v
     createDirs(
         path,
         [
-            'demo',
-            'dist',
-            'doc',
+            'public',
             'sass',
             'src',
             'test',
@@ -35,12 +33,20 @@ export function createProject(config: Config, path: string, verbose: boolean): v
             ['editorconfig', '.editorconfig'],
             ['gitignore', '.gitignore'],
             ['npmrc', '.npmrc'],
-            ['index.html'],
             ['karma.conf.js'],
             ['package.json'],
             ['tsconfig.json'],
             ['tslint.json'],
             ['webpack.config.js']
+        ],
+        verbose
+    );
+
+    copyFiles(
+        `${ASSET_PATH}/`,
+        `${path}/public/`,
+        [
+            ['index.html']
         ],
         verbose
     );
